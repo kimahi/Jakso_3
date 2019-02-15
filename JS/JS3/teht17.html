@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 17</title>
+</head>
+<body>
+
+
+<script>
+
+    class Marker {
+      constructor() {
+        this._ink = 5;
+        this._cap = true;
+      }
+
+      putCapOn() {
+        this._cap = true;
+        console.log("Put cap on");
+      }
+
+      takeCapOff() {
+        this._cap = false;
+        console.log("Took cap off");
+      }
+
+      draw() {
+        if (this._cap === false && this._ink > 0) {
+            this._ink--;
+            console.log("Nice drawing!");
+            return true;
+
+        }
+        console.log("Take the cap off, you dummy!!");
+        return false;
+      }
+
+    }
+
+    let kyna = new Marker();
+
+    console.log(kyna);
+    kyna.draw();
+    kyna.takeCapOff();
+    kyna.draw();
+    console.log(kyna);
+    kyna.putCapOn();
+    console.log(kyna);
+
+</script>
+</body>
+</html>

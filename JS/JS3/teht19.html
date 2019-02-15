@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 19</title>
+</head>
+<body>
+
+<script>
+
+    class BeansContainer{
+      constructor() {
+        this._bContainer = false;
+      }
+
+      fillBeansContainer() {
+        this._bContainer = true;
+        console.log("Filling the beans container");
+      }
+
+    }
+
+    class WaterContainer extends BeansContainer{
+      constructor() {
+        super();
+        this._wContainer = false;
+      }
+
+      fillWaterContainer() {
+        this._wContainer = true;
+        console.log("Filling the water container");
+      }
+
+    }
+
+    class CoffeeMaker extends WaterContainer{
+      constructor() {
+        super();
+        this._Power = false;
+      }
+
+      isOn() {
+        return this._Power;
+      }
+
+      pressOnOffSwitch() {
+        if (this._Power === false) {
+          this._Power = true;
+          console.log("Power on");
+        } else {
+          this._Power = false;
+          console.log("Power off");
+        }
+      }
+
+      brew() {
+        if (this._bContainer === true && this._wContainer === true && this._Power === true) {
+          console.log("Brewing coffee!!");
+          this._bContainer = false;
+          this._wContainer = false;
+        } else {
+          console.log("Either the power is off or one of the containers is empty!");
+        }
+      }
+    }
+
+    const kone = new CoffeeMaker();
+    console.log(kone);
+    kone.pressOnOffSwitch();
+    kone.fillWaterContainer();
+    console.log(kone);
+    kone.brew();
+    kone.fillBeansContainer();
+    kone.brew();
+    kone.pressOnOffSwitch();
+    console.log(kone);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 13</title>
+</head>
+<body>
+
+<script>
+
+    let a = new Set([2,3,6]);
+    let b = new Set([2,3,4,5,6]);
+
+
+    const intersection = (a,b) => {
+      let is = new Set([...a].filter(n => b.has(n)));
+      return is;
+    };
+
+    const union = (a,b) => {
+      let un = new Set([...a, ...b]);
+      return un;
+    };
+
+    const superset = (a,b) => {
+      let is = new Set([...a].filter(n => b.has(n)));
+      if (is.size===a.size) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    const common = (a,b) => {
+      let com = intersection(a,b).size;
+      return com;
+    };
+
+    console.log(intersection(a,b));
+    console.log(union(a,b));
+    console.log(superset(a,b));
+    console.log(common(a,b));
+
+</script>
+</body>
+</html>

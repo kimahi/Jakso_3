@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 11 ja 12</title>
+</head>
+<body>
+
+<script>
+
+    let a = [5,3,5,3,5,3,5];
+    let taul = [];
+
+const pickn = (t,a) => {
+  let n = [];
+    for (i=0; i<t; i++) {
+      let rand = Math.floor(Math.random() * a.length);
+      if (a.length===0) {
+      }  else if (i===0) {
+        n.push(a[rand]);
+        a.splice(rand,1);
+      } else if (n.includes(a[rand])===false) {
+        n.push(a[rand]);
+        a.splice(rand,1);
+      } else {
+        a.splice(rand,1);
+        i--;
+      }
+    }
+    return n;
+};
+
+const intRange = (low, high) => {
+    for (i=low; i<=high; i++) {
+      taul.push(i);
+    }
+    return taul;
+};
+
+document.write(pickn(3,a) + '<br>');
+document.write(pickn(7, intRange(1,40)));
+
+</script>
+
+</body>
+</html>

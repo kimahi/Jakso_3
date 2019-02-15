@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PC vs You</title>
+
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+        .lastResult {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Number guessing game</h1>
+
+<p>Selected a random number between </p>
+<p>See if the computer can guess it in 10 turns or fewer. Tell it if its guess was too high or too low.</p>
+
+
+<br>
+<div class="form">
+    <label for="guessField">Your number: </label><input type="text" id="guessField" class="guessField">
+    <input type="submit" value="Start" class="guessSubmit">
+</div>
+<p id="arvaus"></p>
+<br>
+<button onclick="suurempi()">Higher</button>
+<button onclick="pienempi()">Lower</button>
+<br>
+<button onclick="restart()">Restart</button>
+
+
+<script>
+
+    let max;
+    let min;
+    p = document.getElementById("arvaus");
+    let kerrat;
+    let arvaus;
+
+    const guessSubmit = document.querySelector('.guessSubmit');
+    const guessField = document.querySelector('.guessField');
+    const div = document.getElementsByTagName("div")[0];
+
+    const aloita = () => {
+      max = 100;
+      min = 1;
+      kerrat = 0;
+      div.style.display = "none";
+      peli();
+    };
+
+    guessSubmit.addEventListener('click', aloita);
+
+    //tehdään funktio joka arpoo lukuja ja muutetaan maksimia ja minimiä käyttäjän kertoman mukaan
+
+    const peli = () => {
+      let userGuess = Number(guessField.value);
+      kerrat++;
+      arvaus = Math.floor(Math.random() * (max - min)) + min;
+      p.innerHTML = "Computer's guess: " + arvaus;
+      if (userGuess === arvaus) {
+        alert("You lost!");
+      }
+      else if (kerrat === 10) {
+        alert("You won!");
+      }
+    };
+
+    const suurempi = () => {
+      min=arvaus;
+      peli();
+    };
+
+    const pienempi = () => {
+      max=arvaus;
+      peli();
+    };
+
+    const restart = () => {
+      p.innerHTML = "";
+      div.style.display = "block";
+    };
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 16</title>
+</head>
+<body>
+<script>
+
+    let lista = [ {h: 199, w: 100}, {h: 150, w:100}, {h: 170, w:66} ];
+
+    const bmi = (a) => {
+      let bmilista = [];
+      for (i=0; i<a.length; i++) {
+        let pit = a[i].h / 100;
+        let bmi = a[i].w / pit / pit;
+        console.log(bmi);
+        bmilista.push(bmi);
+      }
+      for (j=0; j<a.length; j++) {
+      sort(bmilista, a);
+      }
+      return a;
+    };
+
+    const sort = (bmi, arr) => {
+      for (i=0; i+1<arr.length; i++) {
+        if (bmi[i]>bmi[i+1]) {
+          [ arr[i], arr[i+1] ] = [ arr[i+1], arr[i] ];
+          [ bmi[i], bmi[i+1] ] = [ bmi[i+1], bmi[i] ];
+        }
+      }
+      return arr;
+    };
+
+    console.log(bmi(lista));
+
+</script>
+</body>
+</html>

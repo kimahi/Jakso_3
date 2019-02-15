@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 9</title>
+</head>
+<body>
+
+
+
+<script>
+
+    const arr = [1,2,3,4,5,6,7,4,5,6,5,3,3,5,6,3,25,7,7,4,6,4,2,2,5,3,5];
+
+    const moodi = (lista) => {
+
+      let objekti = {};
+      let maara = 0, moodi = 0;
+
+      lista.forEach(function(x) {
+        if (objekti[x]===undefined) {
+          objekti[x] = 1;
+        } else {
+          objekti[x]++;
+        }
+
+        if (maara<objekti[x]) {
+            maara=objekti[x];
+            moodi = x;
+        }
+      });
+      return moodi;
+    };
+
+    document.write(moodi(arr));
+
+</script>
+
+</body>
+</html>

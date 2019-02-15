@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 10</title>
+</head>
+<body>
+
+
+<script>
+
+    let arr = [];
+    let yht = 0, ka;
+
+    const rndIntFromTo = (from, to) => {
+      return () => Math.floor(Math.random() * (to - from + 1)) + from;
+    };
+
+    const abc = rndIntFromTo(1,9);
+
+    for (let i = 0; i<1000; i++) {
+      arr.push(abc());
+      yht += arr[i];
+    }
+
+    ka = yht / arr.length;
+    document.write("Keskiarvo: " + ka)
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 20</title>
+</head>
+<body>
+
+<script>
+
+  fetch("http://localhost:3000/sivut/").then(function(response) {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("Response not ok!");
+    }
+  }).then(function(myJson) {
+    console.log(myJson);
+    myJson.forEach((e) => document.write("Kuvaus: ", e.description, "<br>", '<a href="', e.link, '">Siirry</a><br><br>'));
+  }).catch(function(e) {
+    console.log("Error: " + e.message);
+  })
+
+</script>
+
+</body>
+</html>

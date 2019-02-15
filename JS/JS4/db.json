@@ -1,0 +1,7 @@
+{
+  "sivut": [
+    {"id": 1, "description": "Hieno hakukone", "link": "https://www.google.com/"},
+    {"id": 2, "description": "Opetellaan koodaamaan", "link": "https://www.w3schools.com/"},
+    {"id": 3, "description": "Uutisia", "link": "https://yle.fi/"}
+  ]
+}
