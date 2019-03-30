@@ -1,0 +1,400 @@
+html {
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: url(stage.png) center no-repeat;
+    background-size: cover;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+    left: 3px;
+    color: white;
+}
+
+#ampu {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+button {
+    background-color: red;
+    font-size: 20px;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 5px black;
+    height: 40px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+}
+
+#infobox {
+    text-align: left;
+    background-color: rgba(47, 79, 79, 0.5);
+    position: absolute;
+    bottom: 0;
+    height: 23%;
+    width: 23%;
+}
+
+.ammo {
+    top: 5px;
+}
+
+.points {
+    top: 33px;
+}
+
+.shots {
+    height: 20px;
+    width: 20px;
+    top: 7px;
+    left: 80px;
+    position: absolute;
+    background: url(sprite.png) no-repeat;
+    background-position: 0 -557px;
+    display: none;
+}
+
+.second {
+    left: 100px;
+}
+
+.third {
+    left: 120px;
+}
+
+.dead {
+    height: 20px;
+    width: 20px;
+    top: 37px;
+    left: 80px;
+    position: absolute;
+    background: url(sprite.png) no-repeat;
+    background-position: -50px -557px;
+}
+
+.two {
+    left: 100px;
+}
+
+.three {
+    left: 120px;
+}
+
+/*KOIRA*/
+
+.laughing {
+    width: 120px;
+    height: 110px;
+    top: 70%;
+    left: 40%;
+    background: url(sprite.png) no-repeat;
+    animation: doggolaugh 0.5s steps(2) infinite;
+    position: relative;
+    display: none;
+}
+
+.doggo {
+    width: 120px;
+    height: 110px;
+    top: 72%;
+    left: -70px;
+    background: url(sprite.png) no-repeat;
+    animation: doggowalk 0.5s steps(4) 6,
+    doggosniff 0.5s 3s steps(2) 4,
+    doggojump 1s 5s steps(4) 1,
+    doggolaugh 0.5s 6s steps(2) 4;
+    position: relative;
+    transition: left 3s linear;
+}
+
+.dogwalk {
+    left: 40%;
+}
+
+@keyframes doggowalk {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -480px 0;
+    }
+}
+
+@keyframes doggosniff {
+    from {
+        background-position: -360px 0;
+    }
+    to {
+        background-position: -600px 0;
+    }
+}
+
+@keyframes doggojump {
+    from {
+        background-position: 0 -110px;
+    }
+    to {
+        background-position: -480px -110px;
+    }
+}
+
+@keyframes doggolaugh {
+    from {
+        background-position: -360px -110px;
+    }
+    to {
+        background-position: -600px -110px;
+    }
+}
+
+@keyframes doggoaway {
+    from {
+        display: block;
+    }
+    to {
+        display: none;
+    }
+}
+
+/*SININEN SORSA*/
+
+.blueduck {
+    width: 80px;
+    height: 80px;
+    top: 500px;
+    left: -100px;
+    background: url(sprite.png) no-repeat;
+    animation: blueStraight 0.5s 8s steps(3) 6,
+    blueCorner 0.5s 11s steps(3) 6,
+    blueBack 0.5s 14s steps(3) 6;
+    position: absolute;
+    transition: left 3s linear, left 3s linear, top 3s linear;
+}
+
+.blueFlyStr {
+    left: 20%;
+}
+
+.blueFlyCor {
+    left: 55%;
+    top: 25%;
+}
+
+.blueFlyBack {
+    top: -20%;
+}
+
+.blueDown {
+    top: 60%;
+}
+
+@keyframes blueStraight {
+    from {
+        background-position: 0 -220px;
+    }
+    to {
+        background-position: -240px -220px;
+    }
+
+}
+
+@keyframes blueCorner {
+    from {
+        background-position: 0 -300px;
+    }
+    to {
+        background-position: -240px -300px;
+    }
+
+}
+
+@keyframes blueBack {
+    from {
+        background-position: 0 -380px;
+    }
+    to {
+        background-position: -240px -380px;
+    }
+
+}
+
+@keyframes blueHit {
+    from {
+        background-position: 0 -460px;
+    }
+    to {
+        background-position: 0 -460px;
+    }
+
+}
+
+@keyframes blueDead {
+    from {
+        background-position: -80px -460px;
+    }
+    to {
+        background-position: -80px -460px;
+    }
+
+}
+
+/*MUSTA SORSA*/
+
+.blackduck {
+    width: 80px;
+    height: 80px;
+    top: 600px;
+    right: -100px;
+    background: url(sprite.png) no-repeat;
+    animation: blackStraight 0.5s 17s steps(3) 6,
+    blackBack 0.5s 20s steps(3) 6,
+    blackCorner 0.5s 23s steps(3) 6;
+    position: absolute;
+    transition: right 3s linear, top 3s linear, right 3s linear;
+    transform: scaleX(-1);
+}
+
+.blackFlyStr {
+    right: 50%;
+}
+
+.blackFlyBack {
+    top: 20%;
+}
+
+.blackFlyCor {
+    right: 90%;
+    top: -20%;
+}
+
+.blackDown {
+    top: 60%;
+}
+
+@keyframes blackStraight {
+    from {
+        background-position: -260px -220px;
+    }
+    to {
+        background-position: -500px -220px;
+    }
+
+}
+
+@keyframes blackBack {
+    from {
+        background-position: -260px -380px;
+    }
+    to {
+        background-position: -500px -380px;
+    }
+
+}
+
+@keyframes blackCorner {
+    from {
+        background-position: -260px -300px;
+    }
+    to {
+        background-position: -500px -300px;
+    }
+
+}
+
+/*PUNAINEN SORSA*/
+
+.redduck {
+    width: 80px;
+    height: 80px;
+    top: 550px;
+    left: -100px;
+    background: url(sprite.png) no-repeat;
+    animation: redStraight 0.5s 26s steps(3) 6,
+    redCorner 0.5s 29s steps(3) 6,
+    redBack 0.5s 32s steps(3) 6,
+    redStraight2 0.5s 35s steps(3) 6;
+    position: absolute;
+    transition: left 3s linear, top 3s linear, left 3s linear;
+}
+
+.redFlyStr1 {
+    left: 60%;
+}
+
+.redFlyCor {
+    left: 30%;
+    top: 40%;
+}
+
+.redFlyBack {
+    top: 5%;
+}
+
+.redFlyStr2 {
+    left: -20%;
+}
+
+.redDown {
+    top: 60%;
+}
+
+@keyframes redStraight {
+    from {
+        background-position: -520px -220px;
+    }
+    to {
+        background-position: -760px -220px;
+    }
+
+}
+
+@keyframes redCorner {
+    from {
+        transform: scaleX(-1);
+        background-position: -520px -300px;
+    }
+    to {
+        transform: scaleX(-1);
+        background-position: -760px -300px;
+    }
+
+}
+
+@keyframes redBack {
+    from {
+        background-position: -520px -380px;
+    }
+    to {
+        background-position: -760px -380px;
+    }
+}
+
+@keyframes redStraight2 {
+    from {
+        transform: scaleX(-1);
+        background-position: -520px -220px;
+    }
+    to {
+        transform: scaleX(-1);
+        background-position: -760px -220px;
+    }
+
+}

@@ -1,16 +1,32 @@
-
-
 html, body {
     margin: 0;
     padding: 0;
+    color: white;
 }
 
-body {
-    font-family: 'Roboto Condensed', sans-serif;
+a {
+    color: white;
+}
+
+p {
+    font-size: 17px;
+}
+
+#looppi {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
 }
 
 [class*="col-"] {
     width: 100%;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .container {
@@ -19,20 +35,14 @@ body {
     margin: 0;
 }
 
-.pad {
-    padding: 10px;
-}
-
 .boxi {
     text-align: center;
     box-sizing: border-box;
     min-height: 200px;
-    border: 3px solid white;
-}
+    border-radius: 25px;
+    background-clip: content-box;
+    border: 4px solid white;
 
-#alkukuva {
-    width: inherit;
-    height: auto;
 }
 
 #info {
@@ -40,20 +50,43 @@ body {
 }
 
 #infokuva {
-    background-color: red;
+    background-color: black;
 }
 
-.kuvakolme {
-    width: 100%;
+#infokuva:hover {
+    box-shadow: 0 0 15px #ffffff, inset 0 0 10px #ffffff;
+}
+
+.kuva {
+    max-height: 300px;
     max-width: 300px;
 }
 
-#teht1 {
-    background-color: turquoise;
+.nemo {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
 }
 
-#teht2 {
-    background-color: yellow;
+h3 {
+    position: absolute;
+    margin: 20px;
+}
+
+.tehtkuvat:hover {
+    box-shadow: inset 0 0 25px #ffffff, 0 0 25px #ffffff;
+}
+
+.viteo {
+    background-color: black;
+}
+
+#teht6 {
+    color: black;
+}
+
+#teht8 {
+    background-color: darkslategrey;
 }
 
 /*Tabletti*/
@@ -86,6 +119,10 @@ body {
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
+
+    [class*="col-"] {
+        padding: 10px;
+    }
 
     .container {margin: auto;}
 }

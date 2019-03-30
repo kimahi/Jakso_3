@@ -2,111 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sprite</title>
-    <style>
-
-        html {
-            height: 100%;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background: url(stage.png) no-repeat;
-        }
-
-        .doggo {
-            width: 120px;
-            height: 110px;
-            top: 545px;
-            left: 10px;
-            background: url(sprite.png) no-repeat;
-            animation: doggowalk 0.5s steps(4) 6,
-            doggosniff 0.5s 3s steps(2) 6,
-            doggojump 1s 6s steps(4) 1,
-            doggolaugh 0.5s 7s steps(2) 2;
-            position: relative;
-            transition: left 3s linear;
-        }
-
-        .dogwalk {
-            left: 500px;
-        }
-
-        @keyframes doggowalk {
-            from {
-                background-position: 0 0;
-            }
-            to {
-                background-position: -480px 0;
-            }
-        }
-
-        @keyframes doggosniff {
-            from {
-                background-position: -360px 0;
-            }
-            to {
-                background-position: -600px 0;
-            }
-        }
-
-        @keyframes doggojump {
-            from {
-                background-position: 0 -110px;
-            }
-            to {
-                background-position: -480px -110px;
-            }
-        }
-
-        @keyframes doggolaugh {
-            from {
-                background-position: -360px -110px;
-            }
-            to {
-                background-position: -600px -110px;
-            }
-        }
-
-        @keyframes doggoaway {
-            from {
-                display: block;
-            }
-            to {
-                display: none;
-            }
-        }
-
-        .blueduck {
-            width: 80px;
-            height: 80px;
-            top: 0px;
-            left: 10px;
-            background: url(sprite.png) no-repeat;
-            animation: birdfly 0.5s steps(3) 2;
-            position: relative;
-            transition: left 3s linear;
-            background-position: -160px -220px;
-        }
-
-        @keyframes birdfly {
-            from {
-                background-position: -0 -220px;
-            }
-            to {
-                background-position: -240px -220px;
-            }
-
-        }
-
-
-    </style>
+    <title>Duck Hunt</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
 </head>
 <body>
 
+<div id="ampu"></div>
+
+<h1>Duck Hunt</h1>
+
+<button onclick="reload()">Reload</button>
+
 <div class="doggo"></div>
+<div class="laughing"></div>
 
 <div class="blueduck"></div>
 
@@ -114,20 +23,23 @@
 
 <div class="redduck"></div>
 
-<script>
+<div id="infobox">
+<h2 class="ammo">Shots:</h2>
+<div class="shots first"></div>
+<div class="shots second"></div>
+<div class="shots third"></div>
 
-    let doggo = document.querySelector(".doggo");
+<h2 class="points">Points:</h2>
+<div class="dead one"></div>
+<div class="dead two"></div>
+<div class="dead three"></div>
+    <h2 id="sini"></h2>
+    <h2 id="must"></h2>
+    <h2 id="puna"></h2>
+    <br>
+    <h2 id="loppu"></h2>
+</div>
 
-    setTimeout(()=>{
-      console.log("liiku");
-      doggo.classList.add("dogwalk");
-    },50);
-
-    setTimeout(()=>{
-      doggo.style.display="none";
-    },8000);
-
-
-</script>
+<script src="main.js"></script>
 </body>
 </html>
